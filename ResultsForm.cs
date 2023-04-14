@@ -22,6 +22,7 @@ namespace WindowsFormsApp2048
             var users = UserManager.GetAll();
             foreach (var user in users)
             dataGridView1.Rows.Add(user.Name,user.Score);
+          
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

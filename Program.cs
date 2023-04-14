@@ -16,7 +16,7 @@ namespace WindowsFormsApp2048
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PlayGame());
+            Application.Run(new UserLoginForm());
         }
     }
 }
