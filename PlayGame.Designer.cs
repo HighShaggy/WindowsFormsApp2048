@@ -35,9 +35,9 @@
             this.таблицаЛидеровToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelCurrentScore = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelBestScore = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +48,8 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(755, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(566, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -60,85 +61,90 @@
             this.таблицаЛидеровToolStripMenuItem,
             this.выходToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(59, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(46, 20);
             this.toolStripMenuItem1.Text = "2048!";
             // 
             // рестартToolStripMenuItem
             // 
             this.рестартToolStripMenuItem.Name = "рестартToolStripMenuItem";
-            this.рестартToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.рестартToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.рестартToolStripMenuItem.Text = "Рестарт";
             this.рестартToolStripMenuItem.Click += new System.EventHandler(this.рестартToolStripMenuItem_Click);
             // 
             // правилаToolStripMenuItem
             // 
             this.правилаToolStripMenuItem.Name = "правилаToolStripMenuItem";
-            this.правилаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.правилаToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.правилаToolStripMenuItem.Text = "Правила";
             this.правилаToolStripMenuItem.Click += new System.EventHandler(this.правилаToolStripMenuItem_Click);
             // 
             // таблицаЛидеровToolStripMenuItem
             // 
             this.таблицаЛидеровToolStripMenuItem.Name = "таблицаЛидеровToolStripMenuItem";
-            this.таблицаЛидеровToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.таблицаЛидеровToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.таблицаЛидеровToolStripMenuItem.Text = "Таблица лидеров";
             this.таблицаЛидеровToolStripMenuItem.Click += new System.EventHandler(this.таблицаЛидеровToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(283, 41);
+            this.label1.Location = new System.Drawing.Point(212, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 16);
+            this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ваш результат:";
             // 
-            // label2
+            // labelCurrentScore
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(406, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.labelCurrentScore.AutoSize = true;
+            this.labelCurrentScore.Location = new System.Drawing.Point(304, 33);
+            this.labelCurrentScore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCurrentScore.Name = "labelCurrentScore";
+            this.labelCurrentScore.Size = new System.Drawing.Size(91, 13);
+            this.labelCurrentScore.TabIndex = 2;
+            this.labelCurrentScore.Text = "labelCurrentScore";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(570, 41);
+            this.label3.Location = new System.Drawing.Point(428, 33);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 16);
+            this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Рекорд:";
             // 
-            // label4
+            // labelBestScore
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(673, 41);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "label4";
+            this.labelBestScore.AutoSize = true;
+            this.labelBestScore.Location = new System.Drawing.Point(488, 33);
+            this.labelBestScore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelBestScore.Name = "labelBestScore";
+            this.labelBestScore.Size = new System.Drawing.Size(78, 13);
+            this.labelBestScore.TabIndex = 4;
+            this.labelBestScore.Text = "labelBestScore";
             // 
             // PlayGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(755, 703);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(566, 571);
+            this.Controls.Add(this.labelBestScore);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelCurrentScore);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PlayGame";
             this.Text = "2048";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -158,9 +164,9 @@
         private System.Windows.Forms.ToolStripMenuItem правилаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem таблицаЛидеровToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelCurrentScore;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelBestScore;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
     }
 }

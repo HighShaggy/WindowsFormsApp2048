@@ -1,7 +1,5 @@
 ﻿using System;
-
 using System.Drawing;
-using System.Linq.Expressions;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp2048
@@ -16,6 +14,16 @@ namespace WindowsFormsApp2048
 
         private static int score = 0;
 
+        private static int bestScore = 0;
+
+        string userName;
+
+        public PlayGame(string userName)
+        {
+            InitializeComponent();
+            this.userName = userName;
+
+        }
         public PlayGame()
         {
             InitializeComponent();
@@ -23,12 +31,48 @@ namespace WindowsFormsApp2048
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            label2.Text = score.ToString();
             LoadMap();
-            
             GenerateNumber();
-            
+            CurrentScore();
+            ShowBestScore();
+        }
 
+        private void CurrentScore()
+        {
+            labelCurrentScore.Text = score.ToString();
+        }
+
+        private void ShowBestScore()
+        {
+            var users = UserManager.GetAll();
+            if (users.Count == 0)
+            {
+                return;
+            }
+            bestScore = users[0].Score;
+            foreach (var user in users)
+            {
+                if (user.Score > bestScore)
+                {
+                    bestScore = user.Score;
+                }
+            }
+            labelBestScore.Text = bestScore.ToString();
+        }
+
+        private bool Win()
+        {
+            for (int i = 0; i < mapSize; i++)
+            {
+                for (int j = 0; j < mapSize; j++)
+                {
+                    if (labelMap[i, j].Text == "2048")
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
         private bool EndGame()
         {
@@ -43,12 +87,11 @@ namespace WindowsFormsApp2048
                 }
             }
 
-            
             for (int i = 0; i < mapSize - 1; i++)
             {
                 for (int j = 0; j < mapSize - 1; j++)
                 {
-                    if (labelMap[i, j].Text == labelMap[i, j + 1].Text || labelMap[i, j].Text == labelMap[i+1,j].Text)
+                    if (labelMap[i, j].Text == labelMap[i, j + 1].Text || labelMap[i, j].Text == labelMap[i + 1, j].Text)
                     {
                         return false;
                     }
@@ -314,15 +357,25 @@ namespace WindowsFormsApp2048
                     }
                 }
             }
-            label2.Text = score.ToString();
+            labelCurrentScore.Text = score.ToString();
             if (EndGame())
             {
-                UserManager.Add(new User() { Name = "фывф" + score, Score = score });
+                UserManager.Add(new User() { Name = userName, Score = score });
                 MessageBox.Show("Игра окончена!");
                 return;
             }
+            if (Win())
+            {
+                UserManager.Add(new User() { Name = userName, Score = score });
+                MessageBox.Show("Поздравляем, вы выиграли!");
+                return;
+            }
+            if (score > bestScore)
+            {
+                labelBestScore.Text = score.ToString();
+            }
             GenerateNumber();
-            
+
         }
 
         private void рестартToolStripMenuItem_Click(object sender, EventArgs e)
@@ -346,7 +399,7 @@ namespace WindowsFormsApp2048
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
     }
 }
