@@ -43,16 +43,7 @@ namespace WindowsFormsApp2048
                 }
             }
 
-            for (int i = 0; i < mapSize; i++)
-            {
-                for (int j = 0; j < mapSize; j++)
-                {
-                    if (labelMap[i, j].Text == "2")
-                    {
-                        return false;
-                    }
-                }
-            }
+            
             for (int i = 0; i < mapSize - 1; i++)
             {
                 for (int j = 0; j < mapSize - 1; j++)
